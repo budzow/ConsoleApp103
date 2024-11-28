@@ -23,7 +23,8 @@ namespace Test
         public void GetDataSetByCategory()
         {
 
-            // BAD: the category might have SQL special characters in it
+            // The input used in SQL query comes from one of the framework
+            // recognized by default as sources of user input (TextBox)
             using (var connection = new SqlConnection(connectionString))
             {
                 var query1 = "SELECT ITEM,PRICE FROM PRODUCT WHERE ITEM_CATEGORY='"
@@ -33,8 +34,8 @@ namespace Test
                 adapter.Fill(result);
             }
 
-            // The variable used in SQL is not recognized as tainted (coming from the user
-            // input) and therefore the tool does not recognize the SQL injection vulnerability.
+            // The input used in SQL is not recognized as tainted (coming from the user
+            // input) so the issue is not raised.
             using (var connection = new SqlConnection(connectionString))
             {
                 string myNotTaintedString = "CONSUMER_GOODS";
@@ -46,7 +47,7 @@ namespace Test
                 adapter.Fill(result);
             }
 
-            // The variable used in SQL is recognized as tainted because of custom configuration 
+            // The input used in SQL is recognized as tainted because of custom SAST configuration 
             // indicating that the UnknownAPI.getCategory() is considerd a source of user input
             using (var connection = new SqlConnection(connectionString))
             {
