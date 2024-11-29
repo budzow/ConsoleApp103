@@ -1,6 +1,0 @@
-﻿C:\Users\michal\source\repos\ConsoleApp103\ConsoleApp103\EntityFrameworkContext.cs
-C:\Users\michal\source\repos\ConsoleApp103\ConsoleApp103\Program.cs
-C:\Users\michal\source\repos\ConsoleApp103\ConsoleApp103\Properties\AssemblyInfo.cs
-C:\Users\michal\source\repos\ConsoleApp103\ConsoleApp103\UnknownAPI.cs
-C:\Users\michal\source\repos\ConsoleApp103\ConsoleApp103\App.config
-C:\Users\michal\source\repos\ConsoleApp103\ConsoleApp103\packages.config
